@@ -1,0 +1,52 @@
+{
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules/**/*",
+    "dist/**/*",
+    "tests/**/*"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "composite": true,
+    "module": "NodeNext",
+    "target": "ESNext",
+    "moduleResolution": "NodeNext",
+    "lib": [
+      "ES2021",
+      "ES2022.Object",
+      "DOM"
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": false,
+    "noImplicitAny": false,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
+    "alwaysStrict": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true, // otherwise poc wont build
+    "noUnusedParameters": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes": true,
+    "skipLibCheck": true, // added as it was in indexer but not root
+    "outDir": "dist/",
+    "plugins": [
+      {
+        "name": "@rollup/plugin-typescript"
+      }
+    ]
+  }
+}

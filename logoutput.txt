@@ -1,0 +1,101 @@
+[user@REDACTED-HOSTNAME indexer]$ bash vars.bash 
+Enforcing TLS validation for PROD ElasticSearch
+Enforcing TLS validation for PROD ElasticSearch
+queueClient Elasticsearch Version: {
+  name: 'REDACTED-HOSTNAME',
+  cluster_name: 'elasticsearch',
+  cluster_uuid: 'vZDZe8_1Q1yca8bLTqBYnQ',
+  version: {
+    number: '8.15.0',
+    build_flavor: 'default',
+    build_type: 'tar',
+    build_hash: '1a77947f34deddb41af25e6f0ddb8e830159c179',
+    build_date: '2024-08-05T10:05:34.233336849Z',
+    build_snapshot: false,
+    lucene_version: '9.11.1',
+    minimum_wire_compatibility_version: '7.17.0',
+    minimum_index_compatibility_version: '7.0.0'
+  },
+  tagline: 'You Know, for Search'
+}
+vectorClient Elasticsearch Version: {
+  name: 'REDACTED-HOSTNAME',
+  cluster_name: 'elasticsearch',
+  cluster_uuid: 'vZDZe8_1Q1yca8bLTqBYnQ',
+  version: {
+    number: '8.15.0',
+    build_flavor: 'default',
+    build_type: 'tar',
+    build_hash: '1a77947f34deddb41af25e6f0ddb8e830159c179',
+    build_date: '2024-08-05T10:05:34.233336849Z',
+    build_snapshot: false,
+    lucene_version: '9.11.1',
+    minimum_wire_compatibility_version: '7.17.0',
+    minimum_index_compatibility_version: '7.0.0'
+  },
+  tagline: 'You Know, for Search'
+}
+/home/user/work/REDACTED-FOLDERNAME/packages/indexer/node_modules/@elastic/transport/lib/Transport.js:604
+                            : new errors_1.ConnectionError(error.message, result, errorOptions);
+                              ^
+
+ConnectionError: Server certificate CA fingerprint does not match the value configured in caFingerprint
+    at SniffingTransport._request (/home/user/work/REDACTED-FOLDERNAME/packages/indexer/node_modules/@elastic/transport/lib/Transport.js:604:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async /home/user/work/REDACTED-FOLDERNAME/packages/indexer/node_modules/@elastic/transport/lib/Transport.js:636:32
+    at async SniffingTransport.request (/home/user/work/REDACTED-FOLDERNAME/packages/indexer/node_modules/@elastic/transport/lib/Transport.js:632:20)
+    at async Indices.create (/home/user/work/REDACTED-FOLDERNAME/packages/indexer/node_modules/@elastic/elasticsearch/lib/api/api/indices.js:229:16)
+    at async ElasticDocStore.ensureIndexExists (file:///home/user/work/REDACTED-FOLDERNAME/packages/indexer/dist/src/elastic/elastic_doc_store.js:61:9)
+    at async ElasticDocStore.fromIndex (file:///home/user/work/REDACTED-FOLDERNAME/packages/indexer/dist/src/elastic/elastic_doc_store.js:32:9)
+    at async file:///home/user/work/REDACTED-FOLDERNAME/packages/indexer/dist/src/index.js:80:18 {
+  options: { redaction: { type: 'replace', additionalKeys: [] } },
+  meta: {
+    body: undefined,
+    statusCode: 0,
+    headers: {},
+    meta: {
+      context: null,
+      request: {
+        params: {
+          method: 'PUT',
+          path: '/spu-index-queue',
+          body: '{"mappings":{"dynamic_templates":[{"metadata":{"match_mapping_type":"*","match":"metadata.*","unmatch":"metadata.loc","mapping":{"type":"keyword"}}}],"properties":{"text":{"type":"text"},"metadata":{"type":"object"}}}}',
+          querystring: '',
+          headers: {
+            'user-agent': 'langchain',
+            authorization: '[redacted]',
+            'x-elastic-client-meta': 'es=8.15.0,js=22.6.0,t=8.7.1,hc=22.6.0',
+            'content-type': 'application/vnd.elasticsearch+json; compatible-with=8',
+            accept: 'application/vnd.elasticsearch+json; compatible-with=8',
+            'content-length': '218'
+          }
+        },
+        options: {},
+        id: 2
+      },
+      name: 'elasticsearch-js',
+      connection: {
+        url: 'https://127.0.0.1:9200/',
+        tls: { rejectUnauthorized: false },
+        id: 'https://127.0.0.1:9200/',
+        timeout: 30000,
+        headers: {
+          'user-agent': 'elasticsearch-js/8.15.0 (linux 5.15.153.1-microsoft-standard-WSL2-x64; Node.js 22.6.0; Transport 8.7.1)',
+          'x-elastic-client-meta': 'es=8.15.0,js=22.6.0,t=8.7.1,hc=22.6.0',
+          authorization: '[redacted]'
+        },
+        deadCount: 0,
+        resurrectTimeout: 0,
+        _openRequests: 0,
+        weight: 1000,
+        maxEventListeners: 100,
+        pool: { _events: {}, _eventsCount: 0, _maxListeners: undefined }
+      },
+      attempts: 3,
+      aborted: false
+    },
+    warnings: null
+  }
+}
+
+Node.js v22.6.0
