@@ -1,0 +1,37 @@
+2024-08-29T16:29:45.398448546Z this is what we provided to the lib   4F:57:DA:6A:80:46:C5:9F:BD:9E:49:78:BA:26:A2:FC:39:1D:32:B7:63:6C:7D:96:82:6A:1E:C5:BE:24:26:48
+2024-08-29T16:29:45.398768325Z This is what was pulled from socket   4F:57:DA:6A:80:46:C5:9F:BD:9E:49:78:BA:26:A2:FC:39:1D:32:B7:63:6C:7D:96:82:6A:1E:C5:BE:24:26:48
+2024-08-29T16:29:45.609336348Z this is what we provided to the lib   4F:57:DA:6A:80:46:C5:9F:BD:9E:49:78:BA:26:A2:FC:39:1D:32:B7:63:6C:7D:96:82:6A:1E:C5:BE:24:26:48
+2024-08-29T16:29:45.609798759Z This is what was pulled from socket   4F:57:DA:6A:80:46:C5:9F:BD:9E:49:78:BA:26:A2:FC:39:1D:32:B7:63:6C:7D:96:82:6A:1E:C5:BE:24:26:48
+2024-08-29T16:29:45.638858475Z this is what we provided to the lib   4F:57:DA:6A:80:46:C5:9F:BD:9E:49:78:BA:26:A2:FC:39:1D:32:B7:63:6C:7D:96:82:6A:1E:C5:BE:24:26:48
+2024-08-29T16:29:45.639516679Z This is what was pulled from socket   undefined
+2024-08-29T16:29:46.726637494Z this is what we provided to the lib   4F:57:DA:6A:80:46:C5:9F:BD:9E:49:78:BA:26:A2:FC:39:1D:32:B7:63:6C:7D:96:82:6A:1E:C5:BE:24:26:48
+2024-08-29T16:29:46.726978813Z This is what was pulled from socket   undefined
+2024-08-29T16:29:50.281014873Z this is what we provided to the lib   4F:57:DA:6A:80:46:C5:9F:BD:9E:49:78:BA:26:A2:FC:39:1D:32:B7:63:6C:7D:96:82:6A:1E:C5:BE:24:26:48
+2024-08-29T16:29:50.281603857Z This is what was pulled from socket   undefined
+2024-08-29T16:29:52.360087070Z this is what we provided to the lib   4F:57:DA:6A:80:46:C5:9F:BD:9E:49:78:BA:26:A2:FC:39:1D:32:B7:63:6C:7D:96:82:6A:1E:C5:BE:24:26:48
+2024-08-29T16:29:52.361160401Z This is what was pulled from socket   undefined
+2024-08-29T16:29:52.371219883Z ConnectionError: Server certificate CA fingerprint does not match the value configured in caFingerprint
+2024-08-29T16:29:52.371245070Z     at SniffingTransport._request (/home/site/wwwroot/node_modules/@elastic/transport/lib/Transport.js:604:31)
+2024-08-29T16:29:52.371255609Z     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-08-29T16:29:52.371267672Z     at async /home/site/wwwroot/node_modules/@elastic/transport/lib/Transport.js:636:32
+2024-08-29T16:29:52.371276478Z     at async SniffingTransport.request (/home/site/wwwroot/node_modules/@elastic/transport/lib/Transport.js:632:20)
+2024-08-29T16:29:52.371284012Z     at async Indices.create (/home/site/wwwroot/node_modules/@elastic/elasticsearch/lib/api/api/indices.js:229:16)
+2024-08-29T16:29:52.371290976Z     at async ElasticVectorStore.ensureIndexExists (file:///home/site/wwwroot/packages/indexer/dist/elastic/elastic_vector_store.js:92:9)
+2024-08-29T16:29:52.371297878Z     at async ElasticVectorStore.fromIndex (file:///home/site/wwwroot/packages/indexer/dist/elastic/elastic_vector_store.js:16:9)
+2024-08-29T16:29:52.371307176Z     at async file:///home/site/wwwroot/packages/indexer/dist/index.js:148:28 {
+2024-08-29T16:29:52.371313808Z   options: { redaction: { type: 'replace', additionalKeys: [] } },
+2024-08-29T16:29:52.371333565Z   meta: {
+2024-08-29T16:29:52.371340028Z     body: undefined,
+2024-08-29T16:29:52.371345728Z     statusCode: 0,
+2024-08-29T16:29:52.371351690Z     headers: {},
+2024-08-29T16:29:52.372340437Z     meta: {
+2024-08-29T16:29:52.372356317Z       context: null,
+2024-08-29T16:29:52.372363380Z       request: [Object],
+2024-08-29T16:29:52.372369061Z       name: 'elasticsearch-js',
+2024-08-29T16:29:52.372375112Z       connection: [Object],
+2024-08-29T16:29:52.372380843Z       attempts: 3,
+2024-08-29T16:29:52.372386523Z       aborted: false
+2024-08-29T16:29:52.372391943Z     },
+2024-08-29T16:29:52.372397233Z     warnings: null
+2024-08-29T16:29:52.372412893Z   }
+2024-08-29T16:29:52.372418533Z }
